@@ -9,8 +9,9 @@ from tracker.models import Transaction, UserSelectedFund
 app_models = apps.get_app_config('tracker').get_models()
 
 
-class TransactionAdmin(admin.StackedInline):
+class TransactionAdmin(admin.TabularInline):
     model = Transaction
+    extra = 2
 
 
 @admin.register(UserSelectedFund)
